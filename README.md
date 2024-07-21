@@ -70,3 +70,4 @@ ContenGenie addresses this problem by using state-of-the-art AI technologies to 
 - Docker
 - PostgreSQL
 - Azure/GCP account for cloud services
+
