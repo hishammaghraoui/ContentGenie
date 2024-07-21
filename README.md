@@ -1,71 +1,72 @@
-<a href="https://chat.vercel.ai/">
-  <img alt="Next.js 14 and App Router-ready AI chatbot." src="https://chat.vercel.ai/opengraph-image.png">
-  <h1 align="center">Next.js AI Chatbot</h1>
-</a>
+# ContenGenie
 
-<p align="center">
-  An open-source AI chatbot app template built with Next.js, the Vercel AI SDK, OpenAI, and Vercel KV.
-</p>
+ContenGenie is an AI-powered content generation tool designed to help African businesses create engaging, personalized, and culturally relevant content efficiently. The platform leverages advanced AI models to generate text, images, and videos, providing a comprehensive solution for content creation.
 
-<p align="center">
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#model-providers"><strong>Model Providers</strong></a> ·
-  <a href="#deploy-your-own"><strong>Deploy Your Own</strong></a> ·
-  <a href="#running-locally"><strong>Running locally</strong></a> ·
-  <a href="#authors"><strong>Authors</strong></a>
-</p>
-<br/>
+## Project Overview
+
+### Problem Statement
+Businesses in Africa often struggle to create content that resonates with their target audience, leading to reduced customer engagement and limited reach. Traditional content creation methods are time-consuming and may lack cultural relevance.
+
+### Solution
+ContenGenie addresses this problem by using state-of-the-art AI technologies to generate high-quality, personalized content. The platform supports multilingual content creation, ensuring cultural sensitivity and relevance. Users can generate social media posts, blog articles, marketing copy, custom images, and videos, all tailored to their brand and audience.
+
+## Technical Stack
+
+### Programming Languages
+- **JavaScript**: For front-end development using React.
+- **Python**: For backend services, handling AI models, and APIs.
+
+### AI Models
+- **Gemini LLMs**: For advanced internet search capabilities.
+- **Preplexity**: For text analysis and content generation.
+- **DALL-E 3**: For generating custom images.
+- **Llama**: For video generation.
+
+### Front-End Frameworks/Libraries
+- **React**: For building the user interface.
+
+### Back-End Frameworks/Libraries
+- **Node.js**: For backend server-side logic.
+- **Express.js**: For routing and middleware in Node.js.
+- **Flask**: For managing AI model APIs and interactions in Python.
+
+### Tools
+- **Git**: For version control.
+- **Jupyter Notebook**: For developing and testing AI models.
+- **PostgreSQL**: For database management.
+- **Docker**: For containerization.
+- **Kubernetes**: For container orchestration.
+- **Azure/GCP**: For cloud computing and deployment services.
+- **Terraform**: For infrastructure as code.
+- **CI/CD Pipelines**: For continuous integration and deployment.
 
 ## Features
 
-- [Next.js](https://nextjs.org) App Router
-- React Server Components (RSCs), Suspense, and Server Actions
-- [Vercel AI SDK](https://sdk.vercel.ai/docs) for streaming chat UI
-- Support for OpenAI (default), Anthropic, Cohere, Hugging Face, or custom AI chat models and/or LangChain
-- [shadcn/ui](https://ui.shadcn.com)
-  - Styling with [Tailwind CSS](https://tailwindcss.com)
-  - [Radix UI](https://radix-ui.com) for headless component primitives
-  - Icons from [Phosphor Icons](https://phosphoricons.com)
-- Chat History, rate limiting, and session storage with [Vercel KV](https://vercel.com/storage/kv)
-- [NextAuth.js](https://github.com/nextauthjs/next-auth) for authentication
+- **Content Generation**: Create high-quality social media posts, blog articles, and marketing copy.
+- **Multilingual Support**: Generate content in multiple languages and dialects.
+- **Cultural Sensitivity**: Ensure content is culturally relevant and resonates with local audiences.
+- **Content Customization**: Advanced customization options for brand-specific content.
+- **Analytics and Reporting**: Detailed analytics on content performance and optimization recommendations.
+- **Content Library**: Pre-generated templates and content ideas.
 
-## Model Providers
+## How It Works
 
-This template ships with OpenAI `gpt-3.5-turbo` as the default. However, thanks to the [Vercel AI SDK](https://sdk.vercel.ai/docs), you can switch LLM providers to [Anthropic](https://anthropic.com), [Cohere](https://cohere.com/), [Hugging Face](https://huggingface.co), or using [LangChain](https://js.langchain.com) with just a few lines of code.
+1. **User Interaction**: Users interact with the React-based frontend to access features and input preferences.
+2. **Backend Processing**: Node.js server handles requests and communicates with Python backend services.
+3. **Content Generation**:
+   - Gemini LLMs for internet search.
+   - Preplexity for text analysis and generation.
+   - DALL-E 3 for image generation.
+   - Llama for video generation.
+4. **Output Delivery**: Generated content is sent back to the React frontend for user review and finalization.
+5. **Analytics and Reporting**: Advanced analytics on user interactions and content performance.
 
-## Deploy Your Own
+## Getting Started
 
-You can deploy your own version of the Next.js AI Chatbot to Vercel with one click:
+### Prerequisites
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?demo-title=Next.js+Chat&demo-description=A+full-featured%2C+hackable+Next.js+AI+chatbot+built+by+Vercel+Labs&demo-url=https%3A%2F%2Fchat.vercel.ai%2F&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F4aVPvWuTmBvzM5cEdRdqeW%2F4234f9baf160f68ffb385a43c3527645%2FCleanShot_2023-06-16_at_17.09.21.png&project-name=Next.js+Chat&repository-name=nextjs-chat&repository-url=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Fai-chatbot&from=templates&skippable-integrations=1&env=OPENAI_API_KEY%2CAUTH_SECRET&envDescription=How+to+get+these+env+vars&envLink=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Fai-chatbot%2Fblob%2Fmain%2F.env.example&teamCreateStatus=hidden&stores=[{"type":"kv"}])
-
-## Creating a KV Database Instance
-
-Follow the steps outlined in the [quick start guide](https://vercel.com/docs/storage/vercel-kv/quickstart#create-a-kv-database) provided by Vercel. This guide will assist you in creating and configuring your KV database instance on Vercel, enabling your application to interact with it.
-
-Remember to update your environment variables (`KV_URL`, `KV_REST_API_URL`, `KV_REST_API_TOKEN`, `KV_REST_API_READ_ONLY_TOKEN`) in the `.env` file with the appropriate credentials provided during the KV database setup.
-
-## Running locally
-
-You will need to use the environment variables [defined in `.env.example`](.env.example) to run Next.js AI Chatbot. It's recommended you use [Vercel Environment Variables](https://vercel.com/docs/projects/environment-variables) for this, but a `.env` file is all that is necessary.
-
-> Note: You should not commit your `.env` file or it will expose secrets that will allow others to control access to your various OpenAI and authentication provider accounts.
-
-1. Install Vercel CLI: `npm i -g vercel`
-2. Link local instance with Vercel and GitHub accounts (creates `.vercel` directory): `vercel link`
-3. Download your environment variables: `vercel env pull`
-
-```bash
-pnpm install
-pnpm dev
-```
-
-Your app template should now be running on [localhost:3000](http://localhost:3000/).
-
-## Authors
-
-This library is created by [Vercel](https://vercel.com) and [Next.js](https://nextjs.org) team members, with contributions from:
-
-- Jared Palmer ([@jaredpalmer](https://twitter.com/jaredpalmer)) - [Vercel](https://vercel.com)
-- Shu Ding ([@shuding\_](https://twitter.com/shuding_)) - [Vercel](https://vercel.com)
-- shadcn ([@shadcn](https://twitter.com/shadcn)) - [Vercel](https://vercel.com)
+- Node.js
+- Python
+- Docker
+- PostgreSQL
+- Azure/GCP account for cloud services
